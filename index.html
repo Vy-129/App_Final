@@ -53,6 +53,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		document.getElementById("probability").innerHTML = "Risk of having heart disease is " + riskProbability + "%";
 
 	}
+	function restartTest() {
+	//Function to restart the test
+ 		allergy_count = 0;
+		cold_count = 0;
+    		//Reset the counts of the variables//
+    		location.href = "#content0";
+		//Send the person back to the first page//
+	}
 	
 </script>	
 
@@ -88,7 +96,7 @@ img, object{
 
 <body>
 <!--Create header for every page-->
-<div id="header" class="w3-container w3-flat-alizarin">
+<div id="header0" class="w3-container w3-flat-alizarin">
 	<h1>Are you at risk for heart disease?</h1>
 </div>
 
