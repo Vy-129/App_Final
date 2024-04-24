@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Vy Vu
+ 
+Further Information:
+http://diystream.cns.utexas.edu/
+
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+Creating an app with a series of questions to compute the probability a person may have heart diseases, so that they can take early action.
+ 
+Known Issues:
+Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+
+References:
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+<head> 
+	<title>Hello World</title>  
+]	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="w3.css">
+	<link rel="stylesheet" href="w3-colors-flat.css">
+</head> 
+
+<script>
+
+	//variable used to put in funtion to cound for the number of answers associated with heart diseases
+	var heartdiseases_count = 0;
+	
+	//funtion to count for the number of answers associated with heart diseases
+	funtion risk(){
+		heartdiseases_count = heartdiseases_count + 1;
+	}
+
+</script>	
+
+
+<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
+<style>	
+<!--No addtional changes are made for style-->
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+<!--Code for reziable images-->
+img, object{
+	max-height:90%;
+	max-width:90%;
+}
+</style>
+
+<body>
+<!--Create header for every page-->
+<div id="header" class="w3-container w3-flat-alizarin">
+	<h1>Are you at risk for heart diseases?</h1>
+</div>
+
+<!--Introduction page-->
+<div id="content" class="w3-container">
+	<p>Are you feeling like and wondering whether you might have or be at risk for any type of heart diseases. Answer a few short questions to find out!</p>
+	
+	<!--Add resizable image-->
+	<img scr="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/1024px/1fac0.png" alt="Human Heart">
+	
+	<!--Button to be used to move to next page-->
+	<a href="#one" class="w3-btn w3-green round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<!--Creat footer for every page-->
+<footer class="w3-bottom w3-container w3-flat-alizarin">
+	<p>DIY!</p>
+</footer>
+	
+</body>
+</html>
