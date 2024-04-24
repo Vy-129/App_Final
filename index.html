@@ -29,7 +29,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <head> 
 	<title>Hello World</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
@@ -37,14 +37,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	//variable used to put in funtion to cound for the number of answers associated with heart diseases
+	//variable used to put in function to count for the number of answers associated with heart diseases
 	var heartdiseases_count = 0;
 	
-	//funtion to count for the number of answers associated with heart diseases
-	funtion risk(){
+	//function to count for the number of answers associated with heart diseases
+	function risk(){
 		heartdiseases_count = heartdiseases_count + 1;
 	}
 
+	/*Create function to compute the probability of user's risk of having heart disease
+ 	let riskProbability be variable*/
+	function diagnosis(){
+		var riskProbability = (heartdiseases_count/8)*100;
+		//The following code used to replace id probability on page results
+		document.getElementById("probability").innerHTML = "Risk of having heart disease is " + riskProbability + "%";
+
+	}
+	
 </script>	
 
 
@@ -70,25 +79,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: 0vw;
     z-index: 1;
 }
-<!--Code for reziable images-->
 img, object{
-	max-height:90%;
-	max-width:90%;
+	max-height:75%;
+	max-width:75%;
 }
+	
 </style>
 
 <body>
 <!--Create header for every page-->
 <div id="header" class="w3-container w3-flat-alizarin">
-	<h1>Are you at risk for heart diseases?</h1>
+	<h1>Are you at risk for heart disease?</h1>
 </div>
 
 <!--Introduction page-->
 <div id="content" class="w3-container">
-	<p>Are you feeling like and wondering whether you might have or be at risk for any type of heart diseases. Answer a few short questions to find out!</p>
-	
-	<!--Add resizable image-->
-	<img scr="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/1024px/1fac0.png" alt="Human Heart">
+	<p>Are you wondering whether you might be at risk for any type of heart diseases. Answer a few short questions to find out!</p>
 	
 	<!--Button to be used to move to next page-->
 	<a href="#one" class="w3-btn w3-green round"> Get Started </a>
@@ -96,10 +102,142 @@ img, object{
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+</div>
 
+<div class="page" id="one">
+	<!--The following is page one for question 1-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 1</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Are you overweight and/or having obesity?</p>
+		<!--Add buttons for answers with yes will add count to risk function-->
+		<a href="#two" onclick="risk();" class="w3-btn w3-green"> Yes</a>
+		<a href="#two" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="two">
+	<!--The following is page two for question 2-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 2</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Are you having any type of diabetes?</p>
+		<!--Add buttons for answers with yes will add count to risk function-->
+		<a href="#three" onclick="risk();" class="w3-btn w3-green"> Yes</a>
+		<a href="#three" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="three">
+	<!--The following is page three for question 3-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 3</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Do you have an unhealthy diet that is high in salt, cholesterol, saturated fats, and trans fats?</p>
+		<!--Add buttons for answers with yes will add count to risk function-->
+		<a href="#four" onclick="risk();" class="w3-btn w3-green"> Yes</a>
+		<a href="#four" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="four">
+	<!--The following is page four for question 4-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 4</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Do you exercise regularly?</p>
+		<!--Add buttons for answers with no will add count to risk function-->
+		<a href="#five" class="w3-btn w3-green"> Yes</a>
+		<a href="#five" onclick="risk();" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="five">
+	<!--The following is page five for question 5-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 5</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Do you consume alcohol excessively?</p>
+		<!--Add buttons for answers with yes will add count to risk function-->
+		<a href="#six" onclick="risk();" class="w3-btn w3-green"> Yes</a>
+		<a href="#six" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="six">
+	<!--The following is page six for question 6-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 6</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Are you smoking?</p>
+		<!--Add buttons for answers with yes will add count to risk function-->
+		<a href="#seven" onclick="risk();" class="w3-btn w3-green"> Yes</a>
+		<a href="#seven" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="seven">
+	<!--The following is page seven for question 7-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 7</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Do you have high blood pressure?</p>
+		<!--Add buttons for answers with yes will add count to risk function-->
+		<a href="#eight" onclick="risk();" class="w3-btn w3-green"> Yes</a>
+		<a href="#eight" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="eight">
+	<!--The following is page eight for question 8-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Question 8</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Do you have high blood cholesterol?</p>
+		<!--Add buttons for answers with yes will add count to risk function-->
+		<a href="#results" onclick="risk();" class="w3-btn w3-green"> Yes</a>
+		<a href="#results" class="w3-btn w3-green"> No</a>
+	</div>
+</div>
+
+<div class="page" id="results">
+	<!--The following is a page to displaying results-->
+	<div id="header" class="w3-container w3-flat-alizarin">
+		<h1>Results</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>The higher the percentage, the greater the risk you are of having heart disease.</p>
+		<p>However, please consult the doctor for proper diagnosis.</p>
+		<p> Please monitor your health closely and check-up once a year for your own wellness.</p>
+		<!--Results will be displayed after hitting the button-->
+		<a onclick="diagnosis();" class="w3-btn w3-green"> See Results</a>
+		<!--Code is used to display the probability of having heart disease-->
+		<p id="probability"></p>
+		<!--Add image on this page with the following code-->
+		<img src="https://www.heart.org/-/media/Images/Around-the-AHA/2022-Top-10_SC.jpg" alt="Heart Disease Illustration">
+	</div>
+</div>	
+		
 <!--Creat footer for every page-->
 <footer class="w3-bottom w3-container w3-flat-alizarin">
-	<p>DIY!</p>
+	<h1>DIY!</h1>
 </footer>
 	
 </body>
